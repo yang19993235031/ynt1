@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="c1">
+			<p class="p1">该广告还有5秒将关闭</p>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var c1=document.querySelector("#c1");
+//		c1.style.display="none";
+		var p1= document.querySelector(".p1");
+		var num = 5;
+		var t=setInterval(function(){
+			num--;
+			p1.innerHTML="该广告还有"+num+"秒将关闭";
+			if(num==0){
+				clearInterval(t);
+				c1.style.display="none";
+			}
+		},1000)
+	</script>
+	<style type="text/css">
+		#c1{
+			width:300px;
+			height: 100px;
+			border:  groove 1px;
+
+		}
+	</style>
+</html>
